@@ -39,7 +39,7 @@ const Notary = ({ drizzle, drizzleState }) => {
     <Grommet theme={customTheme}>
       <div style={{ backgroundColor: "#fcba03", height: '100vh' }}>
         <Header background="#f2f2f2" pad="small">
-          <Avatar src={""} />
+          <Avatar src={require("../assets/icon.png")} />
           <Text style={{ marginRight: '1vw' }}>Insper 2020.2 - Ativos Digitais e Blockchain</Text>
         </Header>
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: "#fcba03", height: '200px' }}>
@@ -115,11 +115,10 @@ const Notary = ({ drizzle, drizzleState }) => {
                 </form>
               )}
             />
-
           </div>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'row', backgroundColor: "#fcba03", justifyContent: 'center', alignItems: 'center', gap: '200px', height: '150px' }}>
+        <div style={{ display: 'flex', flexDirection: 'row', backgroundColor: "#fcba03", justifyContent: 'center', alignItems: 'center', gap: '30px', height: '150px' }}>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <Text style={{ fontSize: '30px', marginTop: '30px', marginBottom: '10px' }}>Última firma aberta</Text>
@@ -133,12 +132,15 @@ const Notary = ({ drizzle, drizzleState }) => {
                 methodArgs={[drizzleState.accounts[acc]]}
                 render={(target) => (
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <Text> CPF: {target.CPF}</Text>
-                    <Text> Assinatura: {target.Signature}</Text>
+                    <Text> CPF: {!target ? "" : target.CPF}</Text>
+                    <Text> Assinatura: {!target ? "" : target.Signature}</Text>
                   </div>
                 )}
               />
             </div >
+          </div>
+          <div>
+            <img src={require("../assets/logo.png")} style={{ width: '6vw' }} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -153,8 +155,8 @@ const Notary = ({ drizzle, drizzleState }) => {
                 methodArgs={[drizzleState.accounts[acc]]}
                 render={(target) => (
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <Text> CPF: {target.CPF}</Text>
-                    <Text> Assinatura: {target.Signature}</Text>
+                    <Text> CPF: {!target ? "" : target.CPF}</Text>
+                    <Text> Assinatura: {!target ? "" : target.Signature}</Text>
                   </div>
                 )}
               />
